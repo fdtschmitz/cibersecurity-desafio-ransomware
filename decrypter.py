@@ -4,13 +4,13 @@ import pyaes
 ## abrir o arquivo criptografado
 file_name = "teste.txt.ransomwaretroll"
 file = open(file_name, "rb")
-file_data = file.read()
+file_data = file.read() # transfere o conteúdo do arquivo criptografado para variável
 file.close()
 
 ## chave para descriptografia
 key = b"testeransomwares"
 aes = pyaes.AESModeOfOperationCTR(key)
-decrypt_data = aes.decrypt(file_data)
+decrypt_data = aes.decrypt(file_data) #transfere o conteúdo descriptografado para variavel
 
 ## remover o arquivo criptografado
 os.remove(file_name)
